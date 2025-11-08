@@ -1,0 +1,73 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
+
+# Expo
+.expo/
+.expo-shared/
+
+# React Native / Expo prebuild - native artifacts
+android/.gradle/
+android/app/build/
+android/build/
+.gradle/
+local.properties
+*.keystore
+*.jks
+*.keystore.properties
+
+ios/Pods/
+ios/build/
+DerivedData/
+*.xcworkspace
+*.xcuserdata
+*.xcuserstate
+*.moved-aside
+*.xcscmblueprint
+
+# Xcode artifacts
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Environment files
+.env
+.env.*.local
+.env.local
+
+# Build outputs & caches
+build/
+dist/
+tmp/
+temp/
+.cache/
+web-build/
+
+# IDE/editor
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Logs, coverage
+logs/
+*.log
+coverage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# macOS
+.DS_Store
+
+# Android Studio captures
+captures/
