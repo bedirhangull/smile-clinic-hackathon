@@ -10,7 +10,11 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.dev.bedirhan.herouinativeexample"
+      "bundleIdentifier": "com.dev.bedirhan.herouinativeexample",
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera for Norwood Scale analysis.",
+        "CFBundleLocalizations": ["en"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,13 +25,43 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.dev.bedirhan.herouinativeexample"
+      "package": "com.dev.bedirhan.herouinativeexample",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera.",
+
+          // optionally, if you want to record audio:
+          "enableMicrophonePermission": true,
+          "microphonePermissionText": "$(PRODUCT_NAME) needs access to your Microphone."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.6"
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
       "expo-router",
       [
         "expo-splash-screen",
@@ -41,11 +75,36 @@
           }
         }
       ],
-      "expo-localization"
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera for Norwood Scale analysis.",
+          "enableMicrophonePermission": false,
+          "faceDetectionMode": "accurate",
+          "landmarkMode": "all",
+          "contourMode": "all"
+        }
+      ],
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": ["en"]
+          }
+        }
+      ],
+      "react-native-vision-camera",
+      "expo-build-properties"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ed7c0ee5-53a2-4234-967d-c60d3a117b0e"
+      }
     }
   }
 }
