@@ -3,6 +3,7 @@ import { HeroUINativeProvider } from 'heroui-native';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import '../../global.css';
+import '@/src/i18n/i18n';
 
 export default function RootLayout() {
   return (
